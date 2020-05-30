@@ -18,7 +18,7 @@ from iluminacao import retornaIluminacao
 from fogao import *
 
 
-fogaoTextura = [ "", "", "", "", "", ""]
+fogaoTextura = [ "", "", "", "", "", "", "", ""]
 
 	
 def main():
@@ -59,10 +59,12 @@ def main():
 
     fogaoTextura[0] = retornaTextura('Imagens/fogao-front.jpg')
     fogaoTextura[1] = retornaTextura('Imagens/fogao-left-right.jpg')
-    fogaoTextura[2] = retornaTextura('Imagens/fogao-up.jpg')
+    fogaoTextura[2] = retornaTextura('Imagens/fogao-up-new.jpeg')
     fogaoTextura[3] = retornaTextura('Imagens/fogao-left-right.jpg')
     fogaoTextura[4] = retornaTextura('Imagens/fogao-left-right.jpg')
     fogaoTextura[5] = retornaTextura('Imagens/fogao-left-right.jpg')
+    fogaoTextura[6] = retornaTextura('Imagens/grades.jpeg')
+    fogaoTextura[7] = retornaTextura('Imagens/pe-fogao.jpeg')
     
     while True:
 
@@ -93,26 +95,71 @@ def main():
 
         glPushMatrix()
         glTranslatef(tx-0.9,ty-1.1, 0.9)
-        retornaOsPesDoFogao() #Pés do fogão
+        retornaOsPesDoFogao(fogaoTextura[7]) #Pés do fogão
         glPopMatrix()
 
         glPushMatrix()
         glTranslatef(tx+0.9,ty-1.1, 0.9)
         glRotatef (180.0, 0.0, 1.0, 0.0)
-        retornaOsPesDoFogao() #Pés do fogão
+        retornaOsPesDoFogao(fogaoTextura[7]) #Pés do fogão
         glPopMatrix()
 
         glPushMatrix()
         glTranslatef(tx-0.9,ty-1.1, -0.9)
-        retornaOsPesDoFogao() #Pés do fogão
+        retornaOsPesDoFogao(fogaoTextura[7]) #Pés do fogão
         glPopMatrix()
 
         glPushMatrix()
         glTranslatef(tx+0.9,ty-1.1, -0.9)
         glRotatef (180.0, 0.0, 1.0, 0.0)
-        retornaOsPesDoFogao() #Pés do fogão
+        retornaOsPesDoFogao(fogaoTextura[7]) #Pés do fogão
         glPopMatrix()
 
+        glPushMatrix()
+        glBindTexture(GL_TEXTURE_2D, fogaoTextura[6])
+        q = gluNewQuadric() #Grades das bocas do fogão
+        gluQuadricDrawStyle(q, GLU_FILL)
+        gluQuadricNormals(q, GLU_SMOOTH)
+        glTranslatef(0.5,1.01,0.55)
+        glRotatef (90.0, 1.0, 0.0, 0.0)
+        gluDisk(q, 0.2, 0.3, 64, 6)
+        glPopMatrix()
+
+        glPushMatrix()
+        glBindTexture(GL_TEXTURE_2D, fogaoTextura[6])
+        q = gluNewQuadric() #Grades das bocas do fogão
+        gluQuadricDrawStyle(q, GLU_FILL)
+        gluQuadricNormals(q, GLU_SMOOTH)
+        glTranslatef(-0.5,1.01,0.55)
+        glRotatef (90.0, 1.0, 0.0, 0.0)
+        gluDisk(q, 0.2, 0.3, 64, 6)
+        glPopMatrix()
+
+        glPushMatrix()
+        glBindTexture(GL_TEXTURE_2D, fogaoTextura[6])
+        q = gluNewQuadric() #Grades das bocas do fogão
+        gluQuadricDrawStyle(q, GLU_FILL)
+        gluQuadricNormals(q, GLU_SMOOTH)
+        glTranslatef(0.5,1.01,-0.55)
+        glRotatef (90.0, 1.0, 0.0, 0.0)
+        gluDisk(q, 0.2, 0.3, 64, 6)
+        glPopMatrix()
+
+        glPushMatrix()
+        glBindTexture(GL_TEXTURE_2D, fogaoTextura[6])
+        q = gluNewQuadric() #Grades das bocas do fogão
+        gluQuadricDrawStyle(q, GLU_FILL)
+        gluQuadricNormals(q, GLU_SMOOTH)
+        glTranslatef(-0.5,1.01,-0.55)
+        glRotatef (90.0, 1.0, 0.0, 0.0)
+        gluDisk(q, 0.2, 0.3, 64, 6)
+        glPopMatrix()
+
+        # glPushMatrix()
+        # glTranslatef(0.5,1.1,0.6)
+        # draw_segments()
+        # glPopMatrix()
+        
 
         glPopMatrix()
 

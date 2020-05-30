@@ -6,7 +6,6 @@ from copy import copy
 from OpenGL.GL import *
 from OpenGL.GLU import *
 
-import keyboard
 import math
 
 verticies = (
@@ -64,6 +63,12 @@ normal5 = (1, 0, 0) #X Positivo
 face6 = (2, 3, 6, 7) #X Negativo
 normal6 = (-1, 0, 0) #X Negativo
 
+# segments = np.array((
+#     ((0, 0.3, 0),(0, 0, 0)),
+#     ((0, 0, 0),(0, 0, 0)),
+#     ((0, 0, 0),(0, 0, 0)),
+# ))
+
 def retornaNovaFace(face, normal, texture = None):
     if not texture is None:
         glBindTexture(GL_TEXTURE_2D, texture)
@@ -78,7 +83,7 @@ def retornaNovaFace(face, normal, texture = None):
     glEnd()
 
 
-def retornaOsPesDoFogao():
+def retornaOsPesDoFogao(texture):
     verticies = (
     ( 0.1, -0.1, -0.1), # 0
     ( 0.2,  0.1, -0.1), # 1
@@ -91,6 +96,8 @@ def retornaOsPesDoFogao():
     (-0.1,  0.1,  0.1)  # 7
     )
 
+    glBindTexture(GL_TEXTURE_2D, texture)
+
 
     glBegin(GL_QUADS)
     for face, normal in zip(faces, normals):
@@ -98,3 +105,11 @@ def retornaOsPesDoFogao():
         for vertex in face:
             glVertex3fv(verticies[vertex])  
     glEnd()
+
+
+# def draw_segments():
+#     glBegin(GL_LINES)
+#     for segment in segments:
+#         glVertex3fv(segment[0])
+#         glVertex3fv(segment[1])
+#     glEnd()
