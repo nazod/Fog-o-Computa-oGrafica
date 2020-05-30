@@ -91,6 +91,28 @@ def main():
         retornaNovaFace(face2, normal2, fogaoTextura[5]) #Tampa do Fogão
         glPopMatrix()
 
+        glPushMatrix()
+        glTranslatef(tx-0.9,ty-1.1, 0.9)
+        retornaOsPesDoFogao() #Pés do fogão
+        glPopMatrix()
+
+        glPushMatrix()
+        glTranslatef(tx+0.9,ty-1.1, 0.9)
+        glRotatef (180.0, 0.0, 1.0, 0.0)
+        retornaOsPesDoFogao() #Pés do fogão
+        glPopMatrix()
+
+        glPushMatrix()
+        glTranslatef(tx-0.9,ty-1.1, -0.9)
+        retornaOsPesDoFogao() #Pés do fogão
+        glPopMatrix()
+
+        glPushMatrix()
+        glTranslatef(tx+0.9,ty-1.1, -0.9)
+        glRotatef (180.0, 0.0, 1.0, 0.0)
+        retornaOsPesDoFogao() #Pés do fogão
+        glPopMatrix()
+
 
         glPopMatrix()
 

@@ -21,6 +21,31 @@ verticies = (
     (-1,  1,  1)  # 7
     )
 
+
+faces = (
+    # Z negativo = (0, 1, 2, 3)
+    (0, 1, 2, 3),
+    # Z positivo = (4, 5, 6, 7)
+    (4, 5, 7, 6),
+    # Y negativo = (0, 3, 4, 6)
+    (0, 3, 6, 4),
+    # Y positivo = (1, 2, 5, 7)
+    (1, 2, 7, 5),
+    # X negativo = (2, 3, 6, 7)
+    (2, 3, 6, 7),
+    # X positivo = (0, 1, 4, 5)
+    (0, 1, 5, 4)
+    )
+
+normals = (
+    (0, 0, -1),
+    (0, 0, 1),
+    (0, -1, 0),
+    (0, 1, 0),
+    (-1, 0, 0),
+    (1, 0, 0),
+)
+
 face1 = (4, 5, 7, 6) #Z Positivo
 normal1 = (0, 0, 1) #Z Positivo
 
@@ -50,4 +75,26 @@ def retornaNovaFace(face, normal, texture = None):
         if not texture is None:
              glTexCoord2f(texIndex[0], texIndex[1])  
         glVertex3fv(verticies[vertex]) 
+    glEnd()
+
+
+def retornaOsPesDoFogao():
+    verticies = (
+    ( 0.1, -0.1, -0.1), # 0
+    ( 0.2,  0.1, -0.1), # 1
+    (-0.1,  0.1, -0.1), # 2
+    (-0.1, -0.1, -0.1), # 3
+
+    ( 0.1, -0.1,  0.1), # 4
+    ( 0.2,  0.1,  0.1), # 5
+    (-0.1, -0.1,  0.1), # 6
+    (-0.1,  0.1,  0.1)  # 7
+    )
+
+
+    glBegin(GL_QUADS)
+    for face, normal in zip(faces, normals):
+        glNormal3d(normal[0], normal[1], normal[2] )
+        for vertex in face:
+            glVertex3fv(verticies[vertex])  
     glEnd()
