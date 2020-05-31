@@ -155,11 +155,109 @@ def main():
         gluDisk(q, 0.2, 0.3, 64, 6)
         glPopMatrix()
 
-        # glPushMatrix()
-        # glTranslatef(0.5,1.1,0.6)
-        # draw_segments()
-        # glPopMatrix()
-        
+        #Grade 1 Inicio
+        glPushMatrix()
+        glTranslatef(0.35,1,0.7)
+        glRotatef (45.0, 0.0, 1.0, 0.0)
+        retornaGradesDoFogao(fogaoTextura[6])
+        glPopMatrix()
+
+        glPushMatrix()
+        glTranslatef(0.65,1,0.7)
+        glRotatef (135.0, 0.0, 1.0, 0.0)
+        retornaGradesDoFogao(fogaoTextura[6])
+        glPopMatrix()
+
+        glPushMatrix()
+        glTranslatef(0.65,1,0.4)
+        glRotatef (225.0, 0.0, 1.0, 0.0)
+        retornaGradesDoFogao(fogaoTextura[6])
+        glPopMatrix()
+
+        glPushMatrix()
+        glTranslatef(0.35,1,0.4)
+        glRotatef (315.0, 0.0, 1.0, 0.0)
+        retornaGradesDoFogao(fogaoTextura[6])
+        glPopMatrix()
+        #Grade 1 Fim
+
+        #Grade 2 Inicio
+        glPushMatrix()
+        glTranslatef(-0.35,1,0.7)
+        glRotatef (135.0, 0.0, 1.0, 0.0)
+        retornaGradesDoFogao(fogaoTextura[6])
+        glPopMatrix()
+
+        glPushMatrix()
+        glTranslatef(-0.65,1,0.7)
+        glRotatef (45.0, 0.0, 1.0, 0.0)
+        retornaGradesDoFogao(fogaoTextura[6])
+        glPopMatrix()
+
+        glPushMatrix()
+        glTranslatef(-0.65,1,0.4)
+        glRotatef (315.0, 0.0, 1.0, 0.0)
+        retornaGradesDoFogao(fogaoTextura[6])
+        glPopMatrix()
+
+        glPushMatrix()
+        glTranslatef(-0.35,1,0.4)
+        glRotatef (225.0, 0.0, 1.0, 0.0)
+        retornaGradesDoFogao(fogaoTextura[6])
+        glPopMatrix()
+        #Grade 2 Fim
+
+        #Grade 3 Inicio
+        glPushMatrix()
+        glTranslatef(0.35,1,-0.7)
+        glRotatef (315.0, 0.0, 1.0, 0.0)
+        retornaGradesDoFogao(fogaoTextura[6])
+        glPopMatrix()
+
+        glPushMatrix()
+        glTranslatef(0.65,1,-0.7)
+        glRotatef (225.0, 0.0, 1.0, 0.0)
+        retornaGradesDoFogao(fogaoTextura[6])
+        glPopMatrix()
+
+        glPushMatrix()
+        glTranslatef(0.65,1,-0.4)
+        glRotatef (135.0, 0.0, 1.0, 0.0)
+        retornaGradesDoFogao(fogaoTextura[6])
+        glPopMatrix()
+
+        glPushMatrix()
+        glTranslatef(0.35,1,-0.4)
+        glRotatef (45.0, 0.0, 1.0, 0.0)
+        retornaGradesDoFogao(fogaoTextura[6])
+        glPopMatrix()
+        #Grade 3 Fim
+
+        #Grade 4 Inicio
+        glPushMatrix()
+        glTranslatef(-0.35,1,-0.7)
+        glRotatef (225.0, 0.0, 1.0, 0.0)
+        retornaGradesDoFogao(fogaoTextura[6])
+        glPopMatrix()
+
+        glPushMatrix()
+        glTranslatef(-0.65,1,-0.7)
+        glRotatef (315.0, 0.0, 1.0, 0.0)
+        retornaGradesDoFogao(fogaoTextura[6])
+        glPopMatrix()
+
+        glPushMatrix()
+        glTranslatef(-0.65,1,-0.4)
+        glRotatef (45.0, 0.0, 1.0, 0.0)
+        retornaGradesDoFogao(fogaoTextura[6])
+        glPopMatrix()
+
+        glPushMatrix()
+        glTranslatef(-0.35,1,-0.4)
+        glRotatef (135.0, 0.0, 1.0, 0.0)
+        retornaGradesDoFogao(fogaoTextura[6])
+        glPopMatrix()
+        #Grade 4 Fim
 
         glPopMatrix()
 

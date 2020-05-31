@@ -107,9 +107,25 @@ def retornaOsPesDoFogao(texture):
     glEnd()
 
 
-# def draw_segments():
-#     glBegin(GL_LINES)
-#     for segment in segments:
-#         glVertex3fv(segment[0])
-#         glVertex3fv(segment[1])
-#     glEnd()
+def retornaGradesDoFogao(texture):
+    verticies = (
+    ( 0.0625/2, 0.0625/2, -0.0125), # 0
+    ( 0.4375/2,  0.125/2, -0.0125), # 0.5
+    (-0.125/2,  0.125/2, -0.0125), # 2
+    (-0.125/2, -0.125/2, -0.0125), # 3
+
+    ( 0.0625, 0.0625,  0.0125), # 4
+    ( 0.4375/2,  0.125/2,  0.0125), # 5
+    (-0.125/2, -0.125/2,  0.0125), # 6
+    (-0.125/2,  0.125/2,  0.0125)  # 7
+    )
+
+    glBindTexture(GL_TEXTURE_2D, texture)
+
+
+    glBegin(GL_QUADS)
+    for face, normal in zip(faces, normals):
+        glNormal3d(normal[0], normal[1], normal[2] )
+        for vertex in face:
+            glVertex3fv(verticies[vertex])  
+    glEnd()
